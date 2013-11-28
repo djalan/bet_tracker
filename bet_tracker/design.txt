@@ -1,0 +1,42 @@
+Gambler
+=======
+	first_name:string
+	last_name:string
+	initial_bankroll:decimal
+	current_bankroll:decimal
+	unit_value:decimal
+	profit_money:decimal
+	profit_pct:decimal
+	
+rails generate model Gambler first_name:string last_name:string initial_bankroll:decimal current_bankroll:decimal unit_value:decimal profit_money:decimal profit_pct:decimal
+
+gambler has_many :bets
+	
+
+
+Bet
+===
+	event_date:datetime
+	description:text
+	american_odds:integer
+	decimal_odds:decimal
+	risk:decimal
+	to_win:decimal
+	net:decimal	
+	sport:string
+	unit:decimal
+	status:string
+	bet_date:datetime
+
+rails generate Bet event_date:datetime description:text	american_odds:integer decimal_odds:decimal risk:decimal	to_win:decimal net:decimal sport:string unit:decimal status:string	bet_date:datetime
+	
+bet belongs_to :gambler
+bet belongs_to :sport
+
+
+
+Sport
+=====
+	name:string
+	
+sport has_many :bets

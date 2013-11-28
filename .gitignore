@@ -1,0 +1,5 @@
+*.swp
+.directory
+.~*
+get/
+.DS_Store
